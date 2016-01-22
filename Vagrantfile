@@ -7,8 +7,8 @@ node_name = "mesos-build-#{user}.local"
 
 Vagrant.configure("2") do |config|
   config.vm.hostname = node_name
-  config.vm.box = "opscode_centos-6.5_chef-provisionerless"
-  config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box"
+  config.vm.box = "opscode_centos-6.7_chef-provisionerless"
+  config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.7_chef-provisionerless.box"
   config.vm.boot_timeout = 120
   config.ssh.forward_agent = true
   config.omnibus.chef_version = :latest
