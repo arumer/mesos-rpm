@@ -16,6 +16,7 @@
 # limitations under the License.
 #
 
+#set -x
 
 SPEC="mesos-glabs.spec"
 
@@ -574,7 +575,7 @@ while test $# -gt 0; do
             export QUALIFIER=`echo $1 | sed -e 's/^[^=]*=//g'`
             shift;;
             
-        --hash)
+        --hash=*)
             export HASH=`echo $1 | sed -e 's/^[^=]*=//g'`
             shift;;
 

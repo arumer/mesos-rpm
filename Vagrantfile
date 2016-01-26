@@ -23,7 +23,8 @@ Vagrant.configure("2") do |config|
   # config.berkshelf.except = []
   
   config.vm.provider :virtualbox do |vb|
-     vb.customize ["modifyvm", :id, "--memory", "4096"]
+      vb.memory = 4096
+      vb.cpus = 1
   end
 
   config.vm.provision :chef_solo do |chef|
@@ -34,6 +35,7 @@ Vagrant.configure("2") do |config|
         "recipe[yum-epel]",
         "recipe[java]",
         "recipe[maven]",
+        "recipe[mesos-buildbox::repos]",
         "recipe[mesos-buildbox::packages]"
     ]
 
